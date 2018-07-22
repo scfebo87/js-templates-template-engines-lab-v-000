@@ -20,3 +20,4 @@ function createPost() {
   let post = document.getElementById("post");
 +	post.innerHTML = postSection;
 +	post.getElementsByTagName("footer")[0].innerHTML = commentsSection;
+}
