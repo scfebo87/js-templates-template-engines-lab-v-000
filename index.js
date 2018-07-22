@@ -9,19 +9,15 @@ function postComment() {
 function createPost() { 
   let pageTemplate = _.template(document.getElementById("page-template").innerHTML);
   let postTemplate = _.template(document.getElementById("post-template").innerHTML);
-+	var commentsTemplate = _.template(document.getElementById("comments-template").innerHTML);
+  let commentsTemplate = _.template(document.getElementById("comments-template").innerHTML);
+	let title = document.getElementById("title").value;
+  let author = document.getElementById("author").value;
+  let content = document.getElementById("content").value;
+	document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
+
+	let postSection = postTemplate({"title": title, "content": content, "author": author});
+  let commentsSection = commentsTemplate();
+  let element = document.getElementById("post");
 +
-+	// Blog values
-+	var postTitle = document.getElementById("postTitle").value;
-+	var postAuthor = document.getElementById("postAuthor").value;
-+	var postContent = document.getElementById("postContent").value;
-+
-+	// append, not replace!
-+	document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
-+
-+	const blogSection = postTemplate({"title": postTitle, "content": postContent, "author": postAuthor});
-+	const commentsSection = commentsTemplate();
-+	const postElement = document.getElementById("post");
-+
-+	postElement.innerHTML = blogSection;
++	postElement.innerHTML = postSection;
 +	postElement.getElementsByTagName("footer")[0].innerHTML = commentsSection;
