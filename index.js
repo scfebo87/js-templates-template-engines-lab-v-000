@@ -19,4 +19,4 @@ function createPost() {
   let commentsSection = commentsTemplate();
   let post = document.getElementById("post");
 +	post.innerHTML = postSection;
-+	postElement.getElementsByTagName("footer")[0].innerHTML = commentsSection;
++	post.getElementsByTagName("footer")[0].innerHTML = commentsSection;
