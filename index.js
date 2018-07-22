@@ -14,10 +14,9 @@ function createPost() {
   let author = document.getElementById("author").value;
   let body = document.getElementById("body").value;
 	document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
-
 	let postSection = postTemplate({"title": title, "body": body, "author": author});
   let commentsSection = commentsTemplate();
   let post = document.getElementById("post");
-+	post.innerHTML = postSection;
-+	post.getElementsByTagName("footer")[0].innerHTML = commentsSection;
+	post.innerHTML = postSection;
+	post.getElementsByTagName("footer")[0].innerHTML = commentsSection;
 }
