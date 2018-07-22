@@ -12,10 +12,10 @@ function createPost() {
   let commentsTemplate = _.template(document.getElementById("comments-template").innerHTML);
 	let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
-  let content = document.getElementById("content").value;
+  let body = document.getElementById("body").value;
 	document.getElementsByTagName("main")[0].innerHTML += pageTemplate();
 
-	let postSection = postTemplate({"title": title, "content": content, "author": author});
+	let postSection = postTemplate({"title": title, "body": body, "author": author});
   let commentsSection = commentsTemplate();
   let element = document.getElementById("post");
 +
